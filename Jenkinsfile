@@ -35,24 +35,35 @@ pipeline {
             }
         }
 
-        stage('Deploy') {
-            steps {
-                echo 'Deploying microservices to AWS EC2'
+        
+stage('Deploy') {
+    steps {
+        echo 'Deploying microservices'
 
-                sh '''
-                    set -eu
+        sh '''
+            set -eu
 
-                    cp user-service \
-                    /opt/user-service
+            echo "Creating deployment directory"
 
-                    cp product-service \
-                    /opt/product-service
+            sudo mkdir -p /opt/microservices
 
-                    cp order-service \
-                    /opt/order-service
-                '''
-            }
-        }
+            echo "Copying User Service"
+            sudo cp user-service /opt/microservices/user-service
+
+            echo "Copying Product Service"
+            sudo cp product-service /opt/microservices/product-service
+
+            echo "Copying Order Service"
+            sudo cp order-service /opt/microservices/order-service
+
+            echo "Checking deployed files"
+            sudo ls -l /opt/microservices/
+
+            echo "Deployment successful"
+        '''
+    }
+}
+
 
         stage('Restart Services') {
             steps {
