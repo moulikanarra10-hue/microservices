@@ -43,13 +43,13 @@ pipeline {
                     set -eu
 
                     cp user-service \
-                    /opt/microservices/user-service
+                    /opt/user-service
 
                     cp product-service \
-                    /opt/microservices/product-service
+                    /opt/product-service
 
                     cp order-service \
-                    /opt/microservices/order-service
+                    /opt/order-service
                 '''
             }
         }
