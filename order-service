@@ -8,7 +8,7 @@ class OrderService(BaseHTTPRequestHandler):
         response = {
             "service": "Order Service",
             "status": "Running",
-            "message": "Welcome to Order Service"
+            "message": "order service is updated succesfully"
         }
 
         data = json.dumps(response).encode()
