@@ -28,7 +28,7 @@ pipeline {
                     python3 -m py_compile \
                     user-service\
                     product-service\
-                    order-service/
+                    order-service
                 '''
 
                 echo 'Build completed successfully'
