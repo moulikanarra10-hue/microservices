@@ -26,9 +26,9 @@ pipeline {
 
                 sh '''
                     python3 -m py_compile \
-                    user-service/app.py \
-                    product-service/app.py \
-                    order-service/app.py
+                    user-service\
+                    product-service\
+                    order-service/
                 '''
 
                 echo 'Build completed successfully'
@@ -42,14 +42,14 @@ pipeline {
                 sh '''
                     set -eu
 
-                    cp user-service/app.py \
-                    /opt/microservices/user-service/app.py
+                    cp user-service \
+                    /opt/microservices/user-service
 
-                    cp product-service/app.py \
-                    /opt/microservices/product-service/app.py
+                    cp product-service \
+                    /opt/microservices/product-service
 
-                    cp order-service/app.py \
-                    /opt/microservices/order-service/app.py
+                    cp order-service \
+                    /opt/microservices/order-service
                 '''
             }
         }
