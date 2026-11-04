@@ -6,7 +6,7 @@ After=network.target
 Type=simple
 User=jenkins
 WorkingDirectory=/opt/microservices/user-service
-ExecStart=/usr/bin/python3 /opt/microservices/user-service/app.py
+ExecStart=/usr/bin/python3 /opt/microservices/user-service
 Restart=always
 RestartSec=3
 
